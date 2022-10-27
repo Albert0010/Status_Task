@@ -1,9 +1,9 @@
 import React from 'react';
 
-function PopUp({handleEditOff,title}) {
+function PopUp({handleEditOff,title,_id,name,handleChangeInputTitle}) {
     return (
         <div className={"popUp"}>
-            <input value={`${title}`} type={"text"} id="status" placeholder={"title..."} />
+            <input value={`${title}`} onChange={(e)=>handleChangeInputTitle(name,e.target.value)} type={"text"} id="status" placeholder={"title..."} />
             <input list="statuses" name="status" id="status" placeholder={"Choose status"} />
             <datalist id="statuses">
                 <option value={"done"}></option>
@@ -12,7 +12,7 @@ function PopUp({handleEditOff,title}) {
                 <option value="blocked"></option>
             </datalist>
             <button onClick={handleEditOff} >Cancel</button>
-            <button>Save</button>
+            <button >Save</button>
         </div>
     );
 }

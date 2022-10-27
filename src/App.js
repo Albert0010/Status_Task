@@ -10,28 +10,38 @@ const defaultState = {
   done: [],
 };
 
+const data = (DATA.reduce((current, task) => {
+  current[task.status].push(task);
+  return current;
+}, defaultState));
 
 
 
-
-
-  
 function App() {
   const [statuses, setStatus] = useState(defaultState);
 
+
   useEffect(() => {
-    setStatus(DATA.reduce((current, task) => {
-      current[task.status].push(task);
-      return current;
-    }, defaultState));
+    setStatus(data);
   }, []);
 
-  console.log(statuses,"asgsah");
+
+  const handleChangeInputTitle = (id,title)=>{
+    setStatus((pr)=>{
+
+      Object.keys(pr).reduce((curr,item)=>{
+
+      },pr)
+
+      return {}
+    })
+  }
 
   return (
       <div className="App">
-        {defaultState.todo.length && Object.keys(statuses).map((item) => <StatussesTask key={Math.random()}
+        {Object.keys(statuses).map((item) => <StatussesTask key={Math.random()}
                                                             name={item}
+                                                            handleChangeInputTitle={handleChangeInputTitle}
                                                             tasks={statuses[item]}
         />)}
       </div>
