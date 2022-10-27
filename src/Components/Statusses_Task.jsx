@@ -2,6 +2,7 @@ import {useState, useEffect} from "react";
 import React from 'react';
 import Task from "./Task.js"
 
+
 function StatussesTask({tasks,name,handleEdit,isEdit}) {
 
 
@@ -11,6 +12,7 @@ function StatussesTask({tasks,name,handleEdit,isEdit}) {
             <div className={"Status"}>
                 {tasks.map(i=><Task key={Math.random()} {...i}
                                     handleEdit={handleEdit}
+                                    name={name}
                                     isEdit={isEdit}/>)
                 }
             </div>
@@ -18,4 +20,4 @@ function StatussesTask({tasks,name,handleEdit,isEdit}) {
     );
 }
 
-export default StatussesTask;
+export default (StatussesTask);

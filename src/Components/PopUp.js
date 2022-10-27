@@ -1,9 +1,9 @@
 import React from 'react';
 
-function PopUp({handleEditOff}) {
+function PopUp({handleEditOff,title}) {
     return (
         <div className={"popUp"}>
-            <input value='' type={"text"} id="status" placeholder={"title..."} />
+            <input value={`${title}`} type={"text"} id="status" placeholder={"title..."} />
             <input list="statuses" name="status" id="status" placeholder={"Choose status"} />
             <datalist id="statuses">
                 <option value={"done"}></option>
