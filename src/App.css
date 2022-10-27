@@ -1,0 +1,34 @@
+
+.App-logo {
+  height: 40vmin;
+  pointer-events: none;
+}
+
+.App{
+  display: flex;
+  gap: 15px;
+  height: 1500px;
+}
+.Status{
+  padding: 10px;
+  width: 150px;
+  margin: 12px;
+  border-radius: 5px;
+  border: 1px blueviolet groove;
+}
+
+.popUp{
+  width: 100%;
+  height: 500px;
+  border: 2px black groove;
+}
+
+.editMode{
+  opacity: 0.3%;
+  gap: 15px;
+  height: 1500px;
+}
+#status{
+  margin: 6px;
+  width: 85%;
+}
