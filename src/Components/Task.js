@@ -1,7 +1,11 @@
-import React, {useState} from 'react';
+import React, {useState, useContext} from 'react';
 import PopUp from "./PopUp.js";
+import {TaskContext} from "./Statusses_Task";
 
-function Task({_id, title, description, status, category,handleChangeInputTitle}) {
+function Task({_id, title, description,handleChangeInput,name}) {
+
+
+
     const [isEdit,setEdit] = useState(false);
 
     const handleEdit = ()=>{
@@ -17,7 +21,8 @@ function Task({_id, title, description, status, category,handleChangeInputTitle}
                 <p>{description}</p>
                 <button onClick={handleEdit}>Edit</button>
             </div> : <PopUp handleEditOff={handleEditOff}
-                            title={title} handleChangeInputTitle={handleChangeInputTitle}
+                            name={name}
+                            title={title}
                             _id={_id}/>}
         </>
 
